@@ -24,11 +24,12 @@ function App() {
         <Sidebar/>
         <ConteudoPrincipal>       
           <>
-          <h1>Rock</h1>
-            {artistas
+          <h1 >Compositor</h1>
+            {
+            artistas
             .map(artista => (
-              <div className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
-                <h1>{artista.name}</h1>
+              <div key={artista.id} className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
+                <h1>{artista.nome}</h1>
               </div>
             ))}
           </>
