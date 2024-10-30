@@ -3,7 +3,7 @@ import conectaNaDb from './db.js';
 import cors from 'cors';
 import artistas from './models/Artistas.js';
 import generos from './models/Generos.js';
-import idades from './models/Idades.js';
+
 
 const app = express();
 app.use(cors(), express.json());
@@ -27,10 +27,7 @@ app.get('/generos', async (req, res) => {
     res.status(200).json(listaGeneros);
 });
 
-app.get('/idades', async (req, res) => {
-    const listaIdades = await idades.find({});
-    res.status(200).json(listaIdades);
-});
+
 
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');

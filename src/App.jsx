@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Container from "./components/Container";
 import ConteudoPrincipal from "./components/ConteudoPrincipal";
 import generos from "../server/models/Generos";
-import idades from "../server/models/Idades";
+
 
 function App() {
 
@@ -25,11 +25,7 @@ function App() {
       .catch(err => console.log(err))
       .finally(() => console.log('Finalizou a requisição'))
 
-      fetch('http://localhost:3000/idades')
-      .then(res => res.json())
-      .then(data => setIdades(data))
-      .catch(err => console.log(err))
-      .finally(() => console.log('Finalizou a requisição'))
+      
   },[])
 
   return (
@@ -53,14 +49,6 @@ function App() {
             .map(generos => (
               <div key={generos.id} className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
                 <h1>{generos.nome}</h1>
-              </div>
-            ))}
-          <h1 >Idades</h1>
-            {
-            idades
-            .map(idades => (
-              <div key={idades.id} className="bg-red-500 w-28 h-28 flex flex-col justify-around items-center">
-                <h1>{idades.idade}</h1>
               </div>
             ))}
           </>
